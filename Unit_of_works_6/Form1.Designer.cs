@@ -59,6 +59,7 @@
             this.btn_agregar_producto.TabIndex = 1;
             this.btn_agregar_producto.Text = "Agregar Producto";
             this.btn_agregar_producto.UseVisualStyleBackColor = true;
+            this.btn_agregar_producto.Click += new System.EventHandler(this.btn_agregar_producto_Click);
             // 
             // btn_realizar_compra
             // 
