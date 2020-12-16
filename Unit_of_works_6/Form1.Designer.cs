@@ -69,6 +69,7 @@
             this.btn_realizar_compra.TabIndex = 2;
             this.btn_realizar_compra.Text = "Realizar Compra";
             this.btn_realizar_compra.UseVisualStyleBackColor = true;
+            this.btn_realizar_compra.Click += new System.EventHandler(this.btn_realizar_compra_Click);
             // 
             // label1
             // 

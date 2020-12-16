@@ -15,6 +15,7 @@ namespace Unit_of_works_6
     public partial class Form1 : Form
     {
         private ProductoBLL productoBLL = new ProductoBLL();
+        private CompraBLL compraBLL = new CompraBLL();
         private List<DetalleOrden> detalleOrdenList = new List<DetalleOrden>();
 
         public Form1()
@@ -48,6 +49,25 @@ namespace Unit_of_works_6
         {
             int producto_id = Convert.ToInt32(txt_producto_id_compra.Text);
             return productoBLL.BuscarProductoporId(producto_id);
+        }
+
+        private void btn_realizar_compra_Click(object sender, EventArgs e)
+        {
+            RealizarunaCompra();
+        }
+
+        private void RealizarunaCompra()
+        {
+            Orden orden = new Orden
+            {
+                Fecha_reg = DateTime.Now,
+                DetalleOrdenList = detalleOrdenList.ToList()
+            };
+
+            compraBLL.RealizarCompra(orden);
+            detalleOrdenList.Clear();
+            RefrescarGrilla();
+
         }
     }
 }
